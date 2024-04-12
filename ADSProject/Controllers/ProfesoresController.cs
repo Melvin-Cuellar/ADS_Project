@@ -4,23 +4,23 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace ADSProject.Controllers
 {
-    [Route("api/carreras/")]
-    public class CarrerasController : ControllerBase
+    [Route("api/profesor/")]
+    public class ProfesoresController : ControllerBase
     {
-        private readonly ICarrera carrera;
+        private readonly IProfesor profesor;
         private const string COD_EXITO = "000000";
         private const string COD_ERROR = "999999";
         private string pCodRespuesta;
         private string pMensajeUsuario;
         private string pMensajeTecnico;
 
-        public CarrerasController(ICarrera carrera)
+        public ProfesoresController(IProfesor profesor)
         {
-            this.carrera = carrera;
+            this.profesor = profesor;
         }
 
-        [HttpPost("agregarCarrera")]
-        public ActionResult<string> AgregarCarrera([FromBody] Carrera carrera)
+        [HttpPost("agregarProfesor")]
+        public ActionResult<string> AgregarProfesor([FromBody] Profesor profesor)
         {
             try
             {
@@ -31,7 +31,7 @@ namespace ADSProject.Controllers
                     return BadRequest(ModelState);
                 }
 
-                int contador = this.carrera.AgregarCarrera(carrera);
+                int contador = this.profesor.AgregarProfesor(profesor);
 
                 if (contador > 0)
                 {
@@ -55,8 +55,8 @@ namespace ADSProject.Controllers
             }
         }
 
-        [HttpPost("actualizarCarrera/{idCarrera}")]
-        public ActionResult<string> ActualizarCarrera(int idCarrera, [FromBody] Carrera carrera)
+        [HttpPost("actualizarProfesor/{idProfesor}")]
+        public ActionResult<string> ActualizarProfesor(int idProfesor, [FromBody] Profesor profesor)
         {
             try
             {
@@ -67,7 +67,7 @@ namespace ADSProject.Controllers
                     return BadRequest(ModelState);
                 }
 
-                int contador = this.carrera.ActualizarCarrera(idCarrera, carrera);
+                int contador = this.profesor.ActualizarProfesor(idProfesor, profesor);
 
                 if (contador > 0)
                 {
@@ -92,12 +92,12 @@ namespace ADSProject.Controllers
 
         }
 
-        [HttpDelete("eliminarCarrera/{idCarrera}")]
-        public ActionResult<string> EliminarCarrera(int idCarrera)
+        [HttpDelete("eliminarProfesor/{idProfesor}")]
+        public ActionResult<string> EliminarProfesor(int idProfesor)
         {
             try
             {
-                bool eliminado = this.carrera.EliminarCarrera(idCarrera);
+                bool eliminado = this.profesor.EliminarProfesor(idProfesor);
 
                 if (eliminado)
                 {
@@ -122,16 +122,16 @@ namespace ADSProject.Controllers
 
         }
 
-        [HttpGet("obtenerCarreraPorId/{idCarrera}")]
-        public ActionResult<Carrera> ObtenerCarreraPorId(int idCarrera)
+        [HttpGet("obtenerProfesorPorId/{idProfesor}")]
+        public ActionResult<Profesor> ObtenerProfesorPorId(int idProfesor)
         {
             try
             {
-                Carrera carrera = this.carrera.ObtenerCarreraPorId(idCarrera);
+                Profesor profesor = this.profesor.ObtenerProfesorPorId(idProfesor);
 
-                if (carrera != null)
+                if (profesor != null)
                 {
-                    return Ok(carrera);
+                    return Ok(profesor);
                 }
                 else
                 {
@@ -150,14 +150,14 @@ namespace ADSProject.Controllers
 
         }
 
-        [HttpGet("obtenerCarreras")]
-        public ActionResult<List<Carrera>> ObtenerCarreras()
+        [HttpGet("obtenerProfesores")]
+        public ActionResult<List<Profesor>> ObtenerProfesores()
         {
             try
             {
-                List<Carrera> lstCarreras = this.carrera.ObtenerTodasLasCarreras();
+                List<Profesor> lstProfesores = this.profesor.ObtenerTodosLosProfesores();
 
-                return Ok(lstCarreras);
+                return Ok(lstProfesores);
             }
             catch (Exception)
             {

@@ -433,11 +433,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\CUELLAR\\Desktop\\USO\\4toAño\\Ciclo7\\Analisis de sistemas\\Laboratorio\\S3-G01\\ADSProject\\ADSProject.csproj",
+      "projectUniqueName": "C:\\Users\\CUELLAR\\Desktop\\USO\\4toAño\\Ciclo7\\Analisis de sistemas\\Laboratorio\\S5-G03\\ADS_Project\\ADSProject\\ADSProject.csproj",
       "projectName": "ADSProject",
-      "projectPath": "C:\\Users\\CUELLAR\\Desktop\\USO\\4toAño\\Ciclo7\\Analisis de sistemas\\Laboratorio\\S3-G01\\ADSProject\\ADSProject.csproj",
+      "projectPath": "C:\\Users\\CUELLAR\\Desktop\\USO\\4toAño\\Ciclo7\\Analisis de sistemas\\Laboratorio\\S5-G03\\ADS_Project\\ADSProject\\ADSProject.csproj",
       "packagesPath": "C:\\Users\\CUELLAR\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\CUELLAR\\Desktop\\USO\\4toAño\\Ciclo7\\Analisis de sistemas\\Laboratorio\\S3-G01\\ADSProject\\obj\\",
+      "outputPath": "C:\\Users\\CUELLAR\\Desktop\\USO\\4toAño\\Ciclo7\\Analisis de sistemas\\Laboratorio\\S5-G03\\ADS_Project\\ADSProject\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\CUELLAR\\AppData\\Roaming\\NuGet\\NuGet.Config",

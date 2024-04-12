@@ -4,23 +4,23 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace ADSProject.Controllers
 {
-    [Route("api/carreras/")]
-    public class CarrerasController : ControllerBase
+    [Route("api/materia/")]
+    public class MateriasController : ControllerBase
     {
-        private readonly ICarrera carrera;
+        private readonly IMateria materia;
         private const string COD_EXITO = "000000";
         private const string COD_ERROR = "999999";
         private string pCodRespuesta;
         private string pMensajeUsuario;
         private string pMensajeTecnico;
 
-        public CarrerasController(ICarrera carrera)
+        public MateriasController(IMateria materia)
         {
-            this.carrera = carrera;
+            this.materia = materia;
         }
 
-        [HttpPost("agregarCarrera")]
-        public ActionResult<string> AgregarCarrera([FromBody] Carrera carrera)
+        [HttpPost("agregarMateria")]
+        public ActionResult<string> AgregarMateria([FromBody] Materia materia)
         {
             try
             {
@@ -31,7 +31,7 @@ namespace ADSProject.Controllers
                     return BadRequest(ModelState);
                 }
 
-                int contador = this.carrera.AgregarCarrera(carrera);
+                int contador = this.materia.AgregarMateria(materia);
 
                 if (contador > 0)
                 {
@@ -55,8 +55,8 @@ namespace ADSProject.Controllers
             }
         }
 
-        [HttpPost("actualizarCarrera/{idCarrera}")]
-        public ActionResult<string> ActualizarCarrera(int idCarrera, [FromBody] Carrera carrera)
+        [HttpPost("actualizarMateria/{idMateria}")]
+        public ActionResult<string> ActualizarMateria(int idMateria, [FromBody] Materia materia)
         {
             try
             {
@@ -67,7 +67,7 @@ namespace ADSProject.Controllers
                     return BadRequest(ModelState);
                 }
 
-                int contador = this.carrera.ActualizarCarrera(idCarrera, carrera);
+                int contador = this.materia.ActualizarMateria(idMateria, materia);
 
                 if (contador > 0)
                 {
@@ -92,12 +92,12 @@ namespace ADSProject.Controllers
 
         }
 
-        [HttpDelete("eliminarCarrera/{idCarrera}")]
-        public ActionResult<string> EliminarCarrera(int idCarrera)
+        [HttpDelete("eliminarMateria/{idMateria}")]
+        public ActionResult<string> EliminarMateria(int idMateria)
         {
             try
             {
-                bool eliminado = this.carrera.EliminarCarrera(idCarrera);
+                bool eliminado = this.materia.EliminarMateria(idMateria);
 
                 if (eliminado)
                 {
@@ -122,16 +122,16 @@ namespace ADSProject.Controllers
 
         }
 
-        [HttpGet("obtenerCarreraPorId/{idCarrera}")]
-        public ActionResult<Carrera> ObtenerCarreraPorId(int idCarrera)
+        [HttpGet("obtenerMateriaPorId/{idMateria}")]
+        public ActionResult<Materia> ObtenerMateriaPorId(int idMateria)
         {
             try
             {
-                Carrera carrera = this.carrera.ObtenerCarreraPorId(idCarrera);
+                Materia materia = this.materia.ObtenerMateriaPorId(idMateria);
 
-                if (carrera != null)
+                if (materia != null)
                 {
-                    return Ok(carrera);
+                    return Ok(materia);
                 }
                 else
                 {
@@ -150,14 +150,14 @@ namespace ADSProject.Controllers
 
         }
 
-        [HttpGet("obtenerCarreras")]
-        public ActionResult<List<Carrera>> ObtenerCarreras()
+        [HttpGet("obtenerMaterias")]
+        public ActionResult<List<Materia>> ObtenerMaterias()
         {
             try
             {
-                List<Carrera> lstCarreras = this.carrera.ObtenerTodasLasCarreras();
+                List<Materia> lstMaterias = this.materia.ObtenerTodasLasMaterias();
 
-                return Ok(lstCarreras);
+                return Ok(lstMaterias);
             }
             catch (Exception)
             {
