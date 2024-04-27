@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\CUELLAR\\Desktop\\USO\\4toAño\\Ciclo7\\Analisis de sistemas\\Laboratorio\\S5-G03\\ADS_Project\\ADSProject\\ADSProject.csproj": {}
+    "C:\\Users\\PC27_A21\\Desktop\\AS\\ADS_Project\\ADSProject\\ADSProject.csproj": {}
   },
   "projects": {
-    "C:\\Users\\CUELLAR\\Desktop\\USO\\4toAño\\Ciclo7\\Analisis de sistemas\\Laboratorio\\S5-G03\\ADS_Project\\ADSProject\\ADSProject.csproj": {
+    "C:\\Users\\PC27_A21\\Desktop\\AS\\ADS_Project\\ADSProject\\ADSProject.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\CUELLAR\\Desktop\\USO\\4toAño\\Ciclo7\\Analisis de sistemas\\Laboratorio\\S5-G03\\ADS_Project\\ADSProject\\ADSProject.csproj",
+        "projectUniqueName": "C:\\Users\\PC27_A21\\Desktop\\AS\\ADS_Project\\ADSProject\\ADSProject.csproj",
         "projectName": "ADSProject",
-        "projectPath": "C:\\Users\\CUELLAR\\Desktop\\USO\\4toAño\\Ciclo7\\Analisis de sistemas\\Laboratorio\\S5-G03\\ADS_Project\\ADSProject\\ADSProject.csproj",
-        "packagesPath": "C:\\Users\\CUELLAR\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\CUELLAR\\Desktop\\USO\\4toAño\\Ciclo7\\Analisis de sistemas\\Laboratorio\\S5-G03\\ADS_Project\\ADSProject\\obj\\",
+        "projectPath": "C:\\Users\\PC27_A21\\Desktop\\AS\\ADS_Project\\ADSProject\\ADSProject.csproj",
+        "packagesPath": "C:\\Users\\PC27_A21\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\PC27_A21\\Desktop\\AS\\ADS_Project\\ADSProject\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\CUELLAR\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\PC27_A21\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -22,7 +22,7 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "https://www.nuget.org/api/v2/": {}
+          "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net8.0": {
@@ -45,6 +45,20 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "dependencies": {
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[8.0.4, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[8.0.4, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[8.0.4, )"
+            },
             "Swashbuckle.AspNetCore": {
               "target": "Package",
               "version": "[6.4.0, )"

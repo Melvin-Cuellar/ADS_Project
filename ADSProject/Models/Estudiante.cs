@@ -1,7 +1,10 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
+using Microsoft.EntityFrameworkCore;
+
 namespace ADSProject.Models
 {
+    [PrimaryKey(nameof(IdEstudiante))]
     public class Estudiante
     {
         //Al atributo Id no es necesario ponerle requerimientos porque se obtiene automaticamente
